@@ -1,0 +1,11 @@
+2.0b (10 February 2022)
+- The code was written anew and the project renamed "monke"
+- Added README.md
+- Added CHANGELOG
+- Added CONFIG.yaml
+- Created repository on GitHub
+- Added scheduled report
+- Added /count command
+- Added percentage calculator
+- Added HTML escape for channel title
+- Added supports for personalizing text messages

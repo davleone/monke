@@ -1,0 +1,39 @@
+# When do_polling is set to true the software is supposed to remain active, answering to the messages received on Telegram
+do_polling: true
+# When do_polling is true, the software is also able to schedule a daily call to the main function.
+# Simply write the hour at which you want the main function to be called.
+# If you do not want to schedule a call to the main function, just write 25 to disable the scheduling.
+send_at_hour: 25
+# When show_percentage is true the percentage relative to each channel compared to the total count is shown.
+show_percentage: true
+# ID of the user admin of the bot; he/she will be able to access a number of functions by contacting the bot on Telegram.
+id_admin: 0
+# ID or username (without @) of the chat where to send the report. The bot needs permission to send messages to that chat.
+id_target_chat: 0
+# You can get your bot token by contacting https://t.me/botfather
+token: 'insert-your-token-here'
+
+log_filename: 'log.log'
+logging_level: ERROR
+source_url: 'https://github.com/davleone/monke'
+
+# Text that the bot will use when writing messages on Telegram. These can be customized according to your needs.
+# Please notice that all messages will be sent with the HTML parse mode.
+# added_success, warning_private and error_already_listed can use the keyword {id} for the ID of the channel processed
+messages_text:
+  welcome: "Welcome \U0001F435 \n<b>monke/b> is a tool to keep track of the subscriptions of certain channels.\n\
+Given a list of channels I will generate a report - either scheduled or on request - and sent it to a specified chat (a user, a group or a channel).\n\
+<b>Do you want to add another channel to the watchlist?</b> Just forward me a message from there and, if that channel is private, add me to it!"
+  added_success: "This channel was added successfully to the watchlist with ID: <code>{id}</code> \U0001F435"
+  count_command: "I will now generate and send the report \U0001F435"
+  warning_private: "This channel was added to the watchlist with ID: <code>{id}</code>.\n\nNote that it is a private channel: if you do not add me to it, I won't be able to see its subscriptions count."
+  error_already_listed: "This channel is already part of the watchlist. ID: <code>{id}</code>"
+  error_not_a_channel: "I could not add this element to the watchlist: it is not a channel!"
+  total_count: "Total subscriptions count:"
+
+# Watchlist of channels; the software will (try to) analyze these to generate the report.
+# For how Telegram currently works you need to forward a message from the specified channel (or add the bot to it), otherwise it won't be able to call the getChat method and retrieve data.
+# By manually editing the list, a group/supergroup might be added to the watchlist, and a channel might be added with its username (without the @).
+# If you manually edit the list, please do not leave any empty line and be sure to comply with YAML syntax.
+# The software is able to add new elements to the list by its own, and that is the recommended way to do it.
+id_channels:
